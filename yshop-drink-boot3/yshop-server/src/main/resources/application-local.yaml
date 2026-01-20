@@ -46,12 +46,12 @@ spring:
       primary: master
       datasource:
         master:
-          url: ${DB_MASTER_URL:jdbc:mysql://127.0.0.1:3306/yixiang-drink-open?useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&nullCatalogMeansCurrent=true}
+          url: ${DB_MASTER_URL:jdbc:mysql://127.0.0.1:3306/lianxun-drink-open?useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&nullCatalogMeansCurrent=true}
           username: ${DB_MASTER_USERNAME:root}
           password: ${DB_MASTER_PASSWORD:root}
         slave: # 模拟从库，可根据自己需要修改
           lazy: true # 开启懒加载，保证启动速度
-          url: ${DB_SLAVE_URL:jdbc:mysql://127.0.0.1:3306/yixiang-drink-open?useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&nullCatalogMeansCurrent=true}
+          url: ${DB_SLAVE_URL:jdbc:mysql://127.0.0.1:3306/lianxun-drink-open?useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&nullCatalogMeansCurrent=true}
           username: ${DB_SLAVE_USERNAME:root}
           password: ${DB_SLAVE_PASSWORD:root}
 
@@ -149,22 +149,22 @@ logging:
     name: ${user.home}/logs/${spring.application.name}.log # 日志文件名，全路径
   level:
     # 配置自己写的 MyBatis Mapper 打印日志
-    co.yixiang.yshop.module.bpm.dal.mysql: debug
-    co.yixiang.yshop.module.infra.dal.mysql: debug
-    co.yixiang.yshop.module.infra.dal.mysql.logger.ApiErrorLogMapper: INFO # 配置 ApiErrorLogMapper 的日志级别为 info，避免和 GlobalExceptionHandler 重复打印
-    co.yixiang.yshop.module.infra.dal.mysql.job.JobLogMapper: INFO # 配置 JobLogMapper 的日志级别为 info
-    co.yixiang.yshop.module.infra.dal.mysql.file.FileConfigMapper: INFO # 配置 FileConfigMapper 的日志级别为 info
-    co.yixiang.yshop.module.pay.dal.mysql: debug
-    co.yixiang.yshop.module.pay.dal.mysql.notify.PayNotifyTaskMapper: INFO # 配置 PayNotifyTaskMapper 的日志级别为 info
-    co.yixiang.yshop.module.system.dal.mysql: debug
-    co.yixiang.yshop.module.system.dal.mysql.sms.SmsChannelMapper: INFO # 配置 SmsChannelMapper 的日志级别为 info
-    co.yixiang.yshop.module.tool.dal.mysql: debug
-    co.yixiang.yshop.module.member.dal.mysql: debug
-    co.yixiang.yshop.module.order.dal.mysql: debug
-    co.yixiang.yshop.module.product.dal.mysql: debug
-    co.yixiang.yshop.module.store.dal.mysql: debug
-    co.yixiang.yshop.module.shop.dal.mysql: debug
-    co.yixiang.yshop.module.coupon.dal.mysql: debug
+    co.lianxun.yshop.module.bpm.dal.mysql: debug
+    co.lianxun.yshop.module.infra.dal.mysql: debug
+    co.lianxun.yshop.module.infra.dal.mysql.logger.ApiErrorLogMapper: INFO # 配置 ApiErrorLogMapper 的日志级别为 info，避免和 GlobalExceptionHandler 重复打印
+    co.lianxun.yshop.module.infra.dal.mysql.job.JobLogMapper: INFO # 配置 JobLogMapper 的日志级别为 info
+    co.lianxun.yshop.module.infra.dal.mysql.file.FileConfigMapper: INFO # 配置 FileConfigMapper 的日志级别为 info
+    co.lianxun.yshop.module.pay.dal.mysql: debug
+    co.lianxun.yshop.module.pay.dal.mysql.notify.PayNotifyTaskMapper: INFO # 配置 PayNotifyTaskMapper 的日志级别为 info
+    co.lianxun.yshop.module.system.dal.mysql: debug
+    co.lianxun.yshop.module.system.dal.mysql.sms.SmsChannelMapper: INFO # 配置 SmsChannelMapper 的日志级别为 info
+    co.lianxun.yshop.module.tool.dal.mysql: debug
+    co.lianxun.yshop.module.member.dal.mysql: debug
+    co.lianxun.yshop.module.order.dal.mysql: debug
+    co.lianxun.yshop.module.product.dal.mysql: debug
+    co.lianxun.yshop.module.store.dal.mysql: debug
+    co.lianxun.yshop.module.shop.dal.mysql: debug
+    co.lianxun.yshop.module.coupon.dal.mysql: debug
     org.springframework.context.support.PostProcessorRegistrationDelegate: ERROR # TODO yshop：先禁用，Spring Boot 3.X 存在部分错误的 WARN 提示
 
 debug: false

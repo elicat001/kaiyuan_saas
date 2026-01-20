@@ -11,11 +11,11 @@ services:
     ports:
       - "3306:3306"
     environment:
-      MYSQL_DATABASE: ${MYSQL_DATABASE:-yixiang-drink}
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-lianxun-drink}
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-123456}
     volumes:
       - mysql:/var/lib/mysql/
-      - ./sql/mysql/yixiang-drink.sql:/docker-entrypoint-initdb.d/yixiang-drink.sql:ro
+      - ./sql/mysql/lianxun-drink.sql:/docker-entrypoint-initdb.d/lianxun-drink.sql:ro
 
   redis:
     container_name: yshop-redis
@@ -44,10 +44,10 @@ services:
           -Djava.security.egd=file:/dev/./urandom
         }
       ARGS:
-        --spring.datasource.dynamic.datasource.master.url=${MASTER_DATASOURCE_URL:-jdbc:mysql://yshop-mysql:3306/yixiang-drink?useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&nullCatalogMeansCurrent=true}
+        --spring.datasource.dynamic.datasource.master.url=${MASTER_DATASOURCE_URL:-jdbc:mysql://yshop-mysql:3306/lianxun-drink?useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&nullCatalogMeansCurrent=true}
         --spring.datasource.dynamic.datasource.master.username=${MASTER_DATASOURCE_USERNAME:-root}
         --spring.datasource.dynamic.datasource.master.password=${MASTER_DATASOURCE_PASSWORD:-123456}
-        --spring.datasource.dynamic.datasource.slave.url=${SLAVE_DATASOURCE_URL:-jdbc:mysql://yshop-mysql:3306/yixiang-drink?useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&nullCatalogMeansCurrent=true}
+        --spring.datasource.dynamic.datasource.slave.url=${SLAVE_DATASOURCE_URL:-jdbc:mysql://yshop-mysql:3306/lianxun-drink?useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&nullCatalogMeansCurrent=true}
         --spring.datasource.dynamic.datasource.slave.username=${SLAVE_DATASOURCE_USERNAME:-root}
         --spring.datasource.dynamic.datasource.slave.password=${SLAVE_DATASOURCE_PASSWORD:-123456}
         --spring.data.redis.host=${REDIS_HOST:-yshop-redis}
@@ -63,7 +63,7 @@ services:
         NODE_ENV:
           ENV=${NODE_ENV:-production}
           PUBLIC_PATH=${PUBLIC_PATH:-/}
-          VUE_APP_TITLE=${VUE_APP_TITLE:-意象商城管理系统}
+          VUE_APP_TITLE=${VUE_APP_TITLE:-链寻点餐管理系统}
           VUE_APP_BASE_API=${VUE_APP_BASE_API:-/prod-api}
           VUE_APP_APP_NAME=${VUE_APP_APP_NAME:-/}
           VUE_APP_TENANT_ENABLE=${VUE_APP_TENANT_ENABLE:-true}

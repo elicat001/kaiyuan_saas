@@ -1,4 +1,4 @@
-# YShop-Drink 系统优化总结
+# 链寻点餐系统优化总结
 
 **优化时间**: 2026-01-20
 **优化范围**: 全栈（后端 + 前端 + 移动端 + 数据库 + 部署）
@@ -83,7 +83,7 @@
 ### 后端 Java
 
 ```
-yshop-drink-boot3/yshop-module-mall/yshop-module-order-biz/src/main/java/co/yixiang/yshop/module/order/service/storeorder/
+yshop-drink-boot3/yshop-module-mall/yshop-module-order-biz/src/main/java/co/lianxun/yshop/module/order/service/storeorder/
 ├── OrderCalculationService.java          # [新增] 订单计算服务接口
 ├── OrderCalculationServiceImpl.java      # [新增] 订单计算服务实现
 ├── OrderStockService.java                # [新增] 库存服务接口
@@ -118,7 +118,7 @@ yshop-drink-uniapp-vue3/
 执行以下 SQL 文件添加优化索引：
 
 ```bash
-mysql -u root -p yixiang-drink-open < sql/optimization-indexes.sql
+mysql -u root -p lianxun-drink < sql/optimization-indexes.sql
 ```
 
 ### 2. 环境变量配置

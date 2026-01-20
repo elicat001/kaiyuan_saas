@@ -1,5 +1,5 @@
 {
-    "name" : "yshop-miniapp",
+    "name" : "链寻点餐",
     "appid" : "__UNI__ADC0FB0",
     "description" : "",
     "versionName" : "1.0.0",
@@ -187,14 +187,14 @@
                     //可选，JSON对象，使用苹果登录(Sign in with Apple)SDK配置，无配置参数，仅iOS平台支持
                     "weixin" : {
                         "appid" : "wx7c84ede33062d1e4",
-                        "UniversalLinks" : "https://yixiang.co/app/"
+                        "UniversalLinks" : "https://lianxun.com/app/"
                     }
                 },
                 "payment" : {
                     "weixin" : {
                         "__platform__" : [ "ios", "android" ],
                         "appid" : "wx7c84ede33062d1e4",
-                        "UniversalLinks" : "https://yixiang.co/app/"
+                        "UniversalLinks" : "https://lianxun.com/app/"
                     }
                 },
                 //可选，JSON对象，使用google支付SDK配置，无配置参数，仅Android平台支持

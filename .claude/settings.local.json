@@ -41,7 +41,10 @@
       "Bash(tree:*)",
       "Bash(ls:*)",
       "Bash(dir:*)",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nInitial commit: YShop-Drink SaaS System\n\nFull-stack ordering system with optimizations:\n- Backend: Spring Boot 3.2.2 + MyBatis Plus\n- Frontend: Vue 3 + Vite + Element Plus\n- Mobile: UniApp Vue 3\n- Security: Environment variables, path traversal protection\n- Performance: N+1 query fix, database indexes, caching\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git commit:*)",
+      "Bash(git mv:*)"
     ]
   }
 }

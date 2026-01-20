@@ -40,12 +40,12 @@ spring:
       primary: master
       datasource:
         master:
-          url: ${DB_MASTER_URL:jdbc:mysql://127.0.0.1:3306/yixiang-drink-open?useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&nullCatalogMeansCurrent=true}
+          url: ${DB_MASTER_URL:jdbc:mysql://127.0.0.1:3306/lianxun-drink-open?useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&nullCatalogMeansCurrent=true}
           username: ${DB_MASTER_USERNAME:root}
           password: ${DB_MASTER_PASSWORD:root}
         slave: # 模拟从库，可根据自己需要修改
           lazy: true # 开启懒加载，保证启动速度
-          url: ${DB_SLAVE_URL:jdbc:mysql://127.0.0.1:3306/yixiang-drink-open?useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&nullCatalogMeansCurrent=true}
+          url: ${DB_SLAVE_URL:jdbc:mysql://127.0.0.1:3306/lianxun-drink-open?useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&nullCatalogMeansCurrent=true}
           username: ${DB_SLAVE_USERNAME:root}
           password: ${DB_SLAVE_PASSWORD:root}
 
@@ -176,7 +176,7 @@ yshop:
   demo: true # 开启演示模式
   tencent-lbs-key: TVDBZ-TDILD-4ON4B-PFDZA-RNLKH-VVF6E # QQ 地图的密钥 https://lbs.qq.com/service/staticV2/staticGuide/staticDoc
   file-path: /www/wwwroot/drink/file/
-  h5: https://www.yixiang.co/h5
+  h5: https://www.lianxun.com/h5
 
 justauth:
   enabled: true

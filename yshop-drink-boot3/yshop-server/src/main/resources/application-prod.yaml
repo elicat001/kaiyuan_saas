@@ -129,7 +129,7 @@ logging:
     name: /var/log/yshop/${spring.application.name}.log
   level:
     root: WARN
-    co.yixiang.yshop: INFO
+    co.lianxun.yshop: INFO
 
 --- #################### 微信配置 ####################
 

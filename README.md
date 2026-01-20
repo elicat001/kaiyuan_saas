@@ -2,19 +2,19 @@
 
 ## 平台简介
 
-意象点餐(扫码点餐)系统，在线点餐(外卖与自取)小程序模式，支持多门店模式，SaaS多租户模式,基础技术Java17，springboot3、vue3、uniapp(vue3)（支持H5、微信小程序）
-采用当前流行技术组合的前后端分离点餐系统： SpringBoot3、Spring Security OAuth2、MybatisPlus、SpringSecurity、jwt、redis、Vue3的前后端分离的系统， 
+链寻点餐(扫码点餐)系统，在线点餐(外卖与自取)小程序模式，支持多门店模式，SaaS多租户模式,基础技术Java17，springboot3、vue3、uniapp(vue3)（支持H5、微信小程序）
+采用当前流行技术组合的前后端分离点餐系统： SpringBoot3、Spring Security OAuth2、MybatisPlus、SpringSecurity、jwt、redis、Vue3的前后端分离的系统，
 包含外卖与自取、商品管理(多规格sku)、店铺管理、云小票打印、图片素材库、订单管理、积分兑换(积分+金额)、充值、优惠券、充值、多门店、微信公众号、商家中心、提前预约、桌面扫码点餐(单人或者多人协同)、收银台(支持扫码枪与扫码盒子收款)、会员卡、桌台点餐等功能，更适合企业或个人二次开发.
 
-官网地址：[https://www.yixiang.co/](https://www.yixiang.co/)
+官网地址：[https://www.lianxun.com/](https://www.lianxun.com/)
 
 
 
 ## 演示地址
 
-| 后台登陆：  | https://dc.yixiang.co   账号/密码：admin/admin123  |
+| 后台登陆：  | https://dc.lianxun.com   账号/密码：admin/admin123  |
 |---|---|
-| 门店登陆： | https://dc.yixiang.co   账号/密码：yixiang001/123456789  |
+| 门店登陆： | https://dc.lianxun.com   账号/密码：lianxun001/123456789  |
 |  移动端演示：关注右边公众号点击菜单其他系统体验点餐小程序与点餐H5，其中如果演示使用验证码登陆的点击下验证码默认验证码是9999 | ![输入图片说明](assets/77a93e8c07a913b838a756abadb383b9.png) |
 
 ## 视频资料
@@ -55,7 +55,7 @@
 
 
 -   3.1 请使用idea打开Java工程，自动会安装依赖
--   3.2 创建数据库且导入工程目录下sql/yixiang-drink.sql 文件
+-   3.2 创建数据库且导入工程目录下sql/lianxun-drink.sql 文件
 -   3.3 找到项目下的yshop-server 的yml,修改数据库相关信息和redis相关信息，如图：
      ![输入图片说明](assets/image.png)
 -   3.4 工程下输入

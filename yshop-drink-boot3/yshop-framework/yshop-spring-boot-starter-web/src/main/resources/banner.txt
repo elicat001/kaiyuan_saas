@@ -1,4 +1,4 @@
-意象电商 http://www.yixiang.co
+链寻点餐系统 http://www.lianxun.com
 Application Version: ${yshop.info.version}
 Spring Boot Version: ${spring-boot.version}
 
