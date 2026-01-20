@@ -1,148 +1,262 @@
+# 链寻点餐系统
 
+<p align="center">
+  <strong>SaaS 多租户扫码点餐解决方案</strong>
+</p>
 
-## 平台简介
+<p align="center">
+  <a href="#技术栈"><img src="https://img.shields.io/badge/Java-17-blue.svg" alt="Java 17"></a>
+  <a href="#技术栈"><img src="https://img.shields.io/badge/Spring%20Boot-3.2-green.svg" alt="Spring Boot 3.2"></a>
+  <a href="#技术栈"><img src="https://img.shields.io/badge/Vue-3.x-brightgreen.svg" alt="Vue 3"></a>
+  <a href="#技术栈"><img src="https://img.shields.io/badge/UniApp-Vue3-blue.svg" alt="UniApp"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT License"></a>
+</p>
 
-链寻点餐(扫码点餐)系统，在线点餐(外卖与自取)小程序模式，支持多门店模式，SaaS多租户模式,基础技术Java17，springboot3、vue3、uniapp(vue3)（支持H5、微信小程序）
-采用当前流行技术组合的前后端分离点餐系统： SpringBoot3、Spring Security OAuth2、MybatisPlus、SpringSecurity、jwt、redis、Vue3的前后端分离的系统，
-包含外卖与自取、商品管理(多规格sku)、店铺管理、云小票打印、图片素材库、订单管理、积分兑换(积分+金额)、充值、优惠券、充值、多门店、微信公众号、商家中心、提前预约、桌面扫码点餐(单人或者多人协同)、收银台(支持扫码枪与扫码盒子收款)、会员卡、桌台点餐等功能，更适合企业或个人二次开发.
+---
 
-官网地址：[https://www.lianxun.com/](https://www.lianxun.com/)
+## 简介
 
+链寻点餐是一套完整的 **SaaS 多租户扫码点餐系统**，支持外卖、自取、堂食等多种点餐模式。采用前后端分离架构，提供管理后台、商家端、用户端（微信小程序 + H5）全端解决方案。
 
+### 核心特性
 
-## 演示地址
+| 特性 | 说明 |
+|------|------|
+| **多门店管理** | 支持连锁品牌多门店独立运营 |
+| **SaaS 多租户** | 一套系统服务多个商户，数据隔离 |
+| **扫码点餐** | 桌台二维码点餐，支持单人/多人协同 |
+| **外卖自取** | 支持外卖配送和到店自取模式 |
+| **收银台** | 支持扫码枪、扫码盒子收款 |
+| **云小票打印** | 对接云打印机，自动出票 |
+| **会员体系** | 会员卡、积分、优惠券、充值 |
+| **营销工具** | 满减、折扣、积分兑换等 |
 
-| 后台登陆：  | https://dc.lianxun.com   账号/密码：admin/admin123  |
-|---|---|
-| 门店登陆： | https://dc.lianxun.com   账号/密码：lianxun001/123456789  |
-|  移动端演示：关注右边公众号点击菜单其他系统体验点餐小程序与点餐H5，其中如果演示使用验证码登陆的点击下验证码默认验证码是9999 | ![输入图片说明](assets/77a93e8c07a913b838a756abadb383b9.png) |
+---
 
-## 视频资料
-如果对您有帮助，您可以点右上角 "Star" 支持一下，这样我们才有继续免费下去的动力，谢谢！ QQ交流群 (入群前，请在网页右上角点 "Star" )，群里有视频教程与开发文档哦！！
-
-交流QQ群：544263002
-
-## 项目说明
-    
+## 项目结构
 
 ```
-    yshop-drink.             Java工程
-    yshop-drink-vue          后台前端vue3工程
-    yshop-drink-uniapp-vue3  移动端uniapp(vue3版本)工程，支持微信小程序、h5
+lianxun-drink/
+├── yshop-drink-boot3/          # 后端 Java 工程 (Spring Boot 3)
+│   ├── yshop-server/           # 主启动模块
+│   ├── yshop-module-mall/      # 商城模块（商品、订单、门店）
+│   ├── yshop-module-member/    # 会员模块
+│   ├── yshop-module-system/    # 系统模块（用户、权限、配置）
+│   ├── yshop-framework/        # 框架层
+│   └── sql/                    # 数据库脚本
+├── yshop-drink-vue3/           # 管理后台 (Vue 3 + Element Plus)
+└── yshop-drink-uniapp-vue3/    # 移动端 (UniApp Vue3，支持小程序/H5)
 ```
 
-
-## 本地快速启动
-  ##### 1、环境要求
-   
-    ```
-        jdk17
-        mysql8
-        redis6+
-        node16+
-        maven3.8+
-    
-    ```
-  ##### 2、开发工具
-   
-    ```
-        idea
-        vscode
-        hbuilder
-    
-    ```
- ##### 3、后端启动
-
-
--   3.1 请使用idea打开Java工程，自动会安装依赖
--   3.2 创建数据库且导入工程目录下sql/lianxun-drink.sql 文件
--   3.3 找到项目下的yshop-server 的yml,修改数据库相关信息和redis相关信息，如图：
-     ![输入图片说明](assets/image.png)
--   3.4 工程下输入
-    ``` 
-    mvn clean install package '-Dmaven.test.skip=true
-    ```
--   3.5 启动项目，如图
-    ![输入图片说明](assets/1702544439568.jpg)
-
-##### 4、后台vue启动
-
- - 4.1 vscode 打开vue工程，在目录下输入命令: 
-    ``` 
-    pnpm install
-    ```
- - 4.2 配置api如图
- ![输入图片说明](assets/1702544756749.jpg)
- - 4.3 本地启动:
-    ```
-     npm run dev
-    ```
-
-##### 5 移动端uniapp启动
- 
-  - 5.1 hbuilder导入uniapp项目，
-  - 5.2 配置api
-   ![输入图片说明](assets/WX20231214-171211@2x.png)
-  - 5.3 配置小程序
-   ![输入图片说明](assets/WX20231214-171416@2x.png)
-  - 5.4 运行小程序
-    ![输入图片说明](assets/WX20231214-171514@2x.png)
-  - 5.5 运行h5
-   
-    ![输入图片说明](assets/1702545370856.jpg)
--
-
-
-
-## 小程序截图
-
-| ![输入图片说明](assets/1000.jpg)| ![输入图片说明](assets/1001.jpg) |
-|---|---|
-| ![输入图片说明](assets/200000.jpg)  |  ![输入图片说明](assets/1002.jpg) |
-| ![输入图片说明](assets/10003.jpg)  | ![输入图片说明](assets/1004.png) | 
-
-## 后台截图
-
-| ![输入图片说明](assets/3000.png) | 
-|---|---|
-| ![输入图片说明](assets/3001.png)  | 
-| ![输入图片说明](assets/3002.png)  | 
-| ![输入图片说明](assets/3003.png)  | ![输入图片说明](assets/3004.png) |
-
+---
 
 ## 技术栈
-- Spring Boot3
 
-- Spring Security oauth2
+### 后端
 
-- MyBatis
+| 技术 | 版本 | 说明 |
+|------|------|------|
+| Java | 17 | LTS 版本 |
+| Spring Boot | 3.2 | 基础框架 |
+| Spring Security | 6.x | 认证授权 (OAuth2) |
+| MyBatis-Plus | 3.5 | ORM 框架 |
+| Redis | 6+ | 缓存/会话 |
+| MySQL | 8.0 | 数据库 |
+| Druid | 1.2 | 连接池 |
+| Hutool | 5.8 | 工具库 |
 
-- MyBatisPlus
+### 前端
 
-- Redis
+| 技术 | 版本 | 说明 |
+|------|------|------|
+| Vue | 3.x | 渐进式框架 |
+| Element Plus | 2.x | UI 组件库 |
+| Vite | 5.x | 构建工具 |
+| Pinia | 2.x | 状态管理 |
+| TypeScript | 5.x | 类型支持 |
 
-- lombok
+### 移动端
 
-- hutool
+| 技术 | 说明 |
+|------|------|
+| UniApp (Vue3) | 跨端框架 |
+| uv-ui | UI 组件库 |
+| 微信小程序 | 主要投放渠道 |
+| H5 | 公众号/浏览器 |
 
-- Vue3
+---
 
-- Element UI
+## 快速开始
 
-- uniapp(vue3)
+### 环境要求
 
-## 特别鸣谢
+- JDK 17+
+- MySQL 8.0+
+- Redis 6+
+- Node.js 16+
+- Maven 3.8+
+- pnpm 8+
 
+### 1. 后端启动
 
-- ruoyi-vue-pro:https://gitee.com/zhijiantianya/ruoyi-vue-pro
-- element-plus:https://element-plus.gitee.io/zh-CN/
-- vue:https://cn.vuejs.org/
-- pay-java-parent:https://gitee.com/egzosn/pay-java-parent
-- uvui：https://www.uvui.cn/
-- uniapp:https://uniapp.dcloud.net.cn/
+```bash
+# 1. 克隆项目
+git clone https://github.com/elicat001/kaiyuan_saas.git
+cd kaiyuan_saas
 
+# 2. 创建数据库并导入
+mysql -u root -p -e "CREATE DATABASE lianxun_drink DEFAULT CHARSET utf8mb4"
+mysql -u root -p lianxun_drink < yshop-drink-boot3/sql/lianxun-drink.sql
+
+# 3. 修改配置
+# 编辑 yshop-drink-boot3/yshop-server/src/main/resources/application-local.yaml
+# 配置数据库连接和 Redis 连接
+
+# 4. 构建并启动
+cd yshop-drink-boot3
+mvn clean install -DskipTests
+cd yshop-server
+mvn spring-boot:run -Dspring-boot.run.profiles=local
+```
+
+后端启动后访问：http://localhost:48080
+
+### 2. 管理后台启动
+
+```bash
+cd yshop-drink-vue3
+
+# 安装依赖
+pnpm install
+
+# 配置 API 地址 (.env.dev)
+# VITE_BASE_URL='http://localhost:48080'
+
+# 启动开发服务器
+pnpm dev
+```
+
+管理后台访问：http://localhost:3000
+
+### 3. 移动端启动
+
+```bash
+# 使用 HBuilderX 打开 yshop-drink-uniapp-vue3 目录
+
+# 1. 配置 API 地址
+#    编辑 config/app.js 中的 HTTP_REQUEST_URL
+
+# 2. 运行到小程序
+#    HBuilderX -> 运行 -> 运行到小程序模拟器 -> 微信开发者工具
+
+# 3. 运行到 H5
+#    HBuilderX -> 运行 -> 运行到浏览器
+```
+
+---
+
+## 系统截图
+
+### 小程序端
+
+| 首页 | 商品详情 |
+|:---:|:---:|
+| ![首页](assets/1000.jpg) | ![商品详情](assets/1001.jpg) |
+
+| 购物车 | 订单 |
+|:---:|:---:|
+| ![购物车](assets/200000.jpg) | ![订单](assets/1002.jpg) |
+
+### 管理后台
+
+| 控制台 |
+|:---:|
+| ![控制台](assets/3000.png) |
+
+| 商品管理 |
+|:---:|
+| ![商品管理](assets/3001.png) |
+
+| 订单管理 |
+|:---:|
+| ![订单管理](assets/3002.png) |
+
+---
+
+## 功能模块
+
+### 商城管理
+- 商品管理（多规格 SKU、分类、属性）
+- 订单管理（外卖、自取、堂食）
+- 门店管理（多门店、营业时间、配送范围）
+- 桌台管理（二维码生成、桌台状态）
+
+### 会员营销
+- 会员管理（等级、积分、余额）
+- 优惠券（满减券、折扣券、新人券）
+- 充值活动（充值送、会员卡）
+- 积分商城（积分兑换商品）
+
+### 系统管理
+- 用户权限（RBAC 权限模型）
+- 租户管理（SaaS 多租户）
+- 系统配置（支付、短信、存储）
+- 操作日志（审计追踪）
+
+### 硬件对接
+- 云小票打印（飞鹅、易联云）
+- 扫码设备（扫码枪、扫码盒子）
+- 电子秤（称重计价）
+
+---
+
+## 部署指南
+
+### Docker 部署
+
+```bash
+# 构建镜像
+cd yshop-drink-boot3
+docker build -t lianxun-drink:latest .
+
+# 运行容器
+docker run -d \
+  --name lianxun-drink \
+  -p 48080:48080 \
+  -e SPRING_PROFILES_ACTIVE=prod \
+  -e DB_HOST=your-db-host \
+  -e DB_PASSWORD=your-db-password \
+  -e REDIS_HOST=your-redis-host \
+  lianxun-drink:latest
+```
+
+### Docker Compose 部署
+
+```bash
+cd yshop-drink-boot3/script/docker
+docker-compose up -d
+```
+
+详细部署文档请参考：[Docker-HOWTO.md](yshop-drink-boot3/script/docker/Docker-HOWTO.md)
+
+---
+
+## 开发文档
+
+- [优化记录](OPTIMIZATION-SUMMARY.md) - 系统优化历史
+- [API 文档](http://localhost:48080/doc.html) - 后端启动后访问
+
+---
 
 ## 开源协议
 
-本项目采用比 Apache 2.0 更宽松的 [MIT License](https://gitee.com/guchengwuyue/yshop-drink/blob/master/LICENSE) 开源协议，个人与企业可 100% 免费使用，不用保留类作者、Copyright 信息。
+本项目采用 [MIT License](LICENSE) 开源协议，可免费用于商业项目。
 
+---
+
+## 鸣谢
+
+- [ruoyi-vue-pro](https://gitee.com/zhijiantianya/ruoyi-vue-pro) - 基础框架
+- [Element Plus](https://element-plus.org/) - Vue3 UI 组件库
+- [uv-ui](https://www.uvui.cn/) - UniApp UI 组件库
+- [pay-java-parent](https://gitee.com/egzosn/pay-java-parent) - 支付集成
